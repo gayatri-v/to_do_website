@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<style>
+    html{
+      background-image:linear-gradient(135deg,#133677,#4e085f);
+    }
+    .box{
+      background-color: whitesmoke;
+      border: solid;
+      margin:300px 300px 300px 300px;
+    }
+    .text{
+      margin-left: 300px;
+    }
+    .head{
+      display: flex;
+      padding: 20px;
+      column-gap: 20px;
+    }
+    img{
+      border-radius: 50px;
+    }
+		#candidate {
+			border-radius: 20%;
+			border-color: aquamarine;
+			box-sizing: border-box;
+		}
+		
+		.buttonClass {
+			border-radius: 20%;
+			border-color: aqua;
+			border-style: inherit;
+		}
+		
+		button:hover {
+			background-color: green;
+		}
+	</style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="text">
+      <div class="head">
+  <h1>To do list</h1>
+  <img src="https://www.computerhope.com/jargon/l/list.jpg" alt="" height="100px" width="80px">
+      </div>
+  <ul id="list"></ul>
+
+	<input type="text" id="candidate" />
+	<button onclick="addItem()" class="buttonClass">
+	Add </button>
+	<button onclick="removeItem()" class="buttonClass">
+	Remove </button>
+    </div>
+  </div>
+
+	<script>
+		function addItem() {
+			var a = document.getElementById("list");
+			var candidate = document.getElementById("candidate");
+			var li = document.createElement("li");
+			li.setAttribute('id', candidate.value);
+			li.appendChild(document.createTextNode(candidate.value));
+			a.appendChild(li);
+		}
+		function removeItem() {
+
+			
+			var a = document.getElementById("list");
+			var candidate = document.getElementById("candidate");
+			var item = document.getElementById(candidate.value);
+			a.removeChild(item);
+		}
+		console.log("hello")
+	</script>
+</body>
+
+</html>
